@@ -1,0 +1,75 @@
+This document explains the idea behind the christmas calendar for Sarita - 2015:
+
+1) Buy 24 small christmas calendar presents
+2) Mark all of them with different signs (e.g. X, 121 etc)
+3) Create a webbased application with 24 hatches with associated numers
+4) Make each of them accessible (can be clicked) at 00:00 (UTC+2) on the day they can be opened
+5) When they are opened: Present a quiz of some sort (e.g. 2+5/2 = ?). When the task is solved, present the soltuion/ sign
+6) The sign explains which present can be opened
+
+Ideas for tasks:
+
+1)
+Task/Question:
+What is your email?
+
+Solution:
+Send an email with a nice note and the solution
+
+2) 
+Task/Question:
+Du har to tomme bøtter. Den ene rommer akkurat 4 liter, den andre 7
+
+Solution:
+
+3) 
+Task/Question:
+
+
+Solution:
+
+
+4) 
+Task/Question: 
+Memory game: Present 8 objects for 5 seconds
+
+Solution: Which of these was not in the picture?
+list 9 things, one which was not in the picture
+
+
+Task/Question: 
+
+
+Solution:
+
+
+Task/Question:
+
+
+Solution:
+
+
+Task/Question:
+
+
+Solution:
+
+
+
+Artefact:
+- Background image:
+	- Change daily?
+
+- Christmas Hatches:
+	- Responsive
+	- Mobile friendly
+	- Transparent
+	- Only available if the date has not been yet
+	- Make clickable
+	- 
+
+
+
+
+
+

@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+	<title>Sarah's Julekalender</title>
+
+  <link rel="shortcut icon" type="image/png" href="assets/img/christmas-calendar-idea.png"/>
+
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/hover-min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  
+  <script src="assets/js/sweetalert.min.js"></script> 
+  <link rel="stylesheet" type="text/css" href="assets/css/sweetalert.css">
+
+	<link rel="stylesheet" type="text/css" href="assets/css/custom.css">
+
+  <script type="text/javascript" src="assets/js/main.js"></script>
+</head>
+<body ng-app="mainApp">
+  <div class="container">
+  	<!-- Heading -->
+  	<h1 align="center">Sarah's julekalender <3</h1>
+  	<br>
+  	<br>
+    <div id="cal-container">
+      <!-- Row 1 -->
+      <div class="row">
+          <div id="one" align="center" class="col-left cols hvr-pulse col-top col-xs-2 col-sm-2 col-md-2 col-lg-2 col-md-offset-2 col-lg-offset-2 col-sm-offset-2 col-xs-offset-2">
+            <button style="height:100%;width:100%;" data-toggle="modal" data-target="#firstModal">1</button>
+          </div>
+
+          <div id="two" align="center" class="cols hvr-grow-shadow col-top col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <button style="height:100%;width:100%;" data-toggle="modal" data-target="#secondModal">2</button>
+          </div>
+
+          <div id="three" class="hvr-buzz-out cols col-top col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <button style="height:100%;width:100%;" data-toggle="modal" data-target="#thirdModal">3</button>
+          </div>
+
+          <div id="four" class="hvr-buzz cols col-top col-right col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <button style="height:100%;width:100%;" data-toggle="modal" data-target="#fourthModal">4</button>
+          </div>
+      </div>
+      
+
+      <!-- Row 2 -->
+      <div class="row">
+          <div id="five" class="hvr-skew-forward cols col-left col-xs-2 col-sm-2 col-md-2 col-lg-2 col-md-offset-2 col-lg-offset-2 col-sm-offset-2 col-xs-offset-2" >
+            <button style="height:100%;width:100%;" id="fifthBtn">5</button>
+          </div>
+
+          <div id="six" class="hvr-wobble-horizontal cols col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <button id="sixthBtn" style="height:100%;width:100%;">6</button>
+          </div>
+
+          <div id="seven" class="hvr-wobble-vertical cols col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <button style="height:100%;width:100%;" data-toggle="modal" data-target="#seventhModal">7</button>
+          </div>
+
+          <div id="eight" class="hvr-skew-backward cols col-right col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <button style="height:100%;width:100%;" data-toggle="modal" data-target="#eightModal">8</button>
+          </div>
+      </div>
+    
+
+      <!-- Row 3 -->
+      <div class="row">
+          <div id="nine" class="hvr-back-pulse cols col-left col-xs-2 col-sm-2 col-md-2 col-lg-2 col-md-offset-2 col-lg-offset-2 col-sm-offset-2 col-xs-offset-2">
+            <button style="height:100%;width:100%;" data-toggle="modal" data-target="#ninthModal">9</button>
+          </div>
+
+          <div id="ten" class="hvr-sweep-to-right cols col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <button style="height:100%;width:100%;" data-toggle="modal" data-target="#tenthModal">10</button>
+          </div>
+
+          <div id="eleven" class="hvr-sweep-to-left cols col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <button style="height:100%;width:100%;" data-toggle="modal" data-target="#eleventhModal">11</button>
+          </div>
+
+          <div id="twelve" class="hvr-fade cols col-right col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <button style="height:100%;width:100%;" data-toggle="modal" data-target="#twelvthModal">12</button>
+          </div>
+      </div>
+      
+
+      <!-- Row 4 -->
+      <div class="row">
+          <div id="thirteen" class="hvr-radial-out cols col-left col-xs-2 col-sm-2 col-md-2 col-lg-2 col-md-offset-2 col-lg-offset-2 col-sm-offset-2 col-xs-offset-2">
+            <button style="height:100%;width:100%;" data-toggle="modal" data-target="#thirteenModal">13</button>
+          </div>
+
+          <div id="fourteen" class="hvr-rectangle-out cols col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <button style="height:100%;width:100%;" data-toggle="modal" data-target="#fourteenthModal">14</button>
+          </div>
+
+          <div id="fifteen" class="hvr-shutter-out-horizontal cols col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <button style="height:100%;width:100%;" data-toggle="modal" data-target="#myModal">15</button>
+          </div>
+
+          <div id="sixteen" class="hvr-shutter-out-vertical cols col-right col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <button style="height:100%;width:100%;" data-toggle="modal" data-target="#myModal">16</button>
+          </div>
+      </div>
+    
+
+      <!-- Row 5 -->
+      <div class="row">
+          <div id="seventeen" class="hvr-float-shadow cols col-left col-xs-2 col-sm-2 col-md-2 col-lg-2 col-md-offset-2 col-lg-offset-2 col-sm-offset-2 col-xs-offset-2">
+            <button style="height:100%;width:100%;" data-toggle="modal" data-target="#myModal">17</button>
+          </div>
+
+          <div id="eighteen" class="hvr-box-shadow-inset cols col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <button style="height:100%;width:100%;" data-toggle="modal" data-target="#myModal">18</button>
+          </div>
+
+          <div id="nineteen" class="hvr-grow-shadow cols col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <button style="height:100%;width:100%;" data-toggle="modal" data-target="#myModal">19</button>
+          </div>
+
+          <div id="twenty" class="hvr-bob cols col-right col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <button style="height:100%;width:100%;" data-toggle="modal" data-target="#myModal">20</button>
+          </div>
+      </div>
+      
+      <!-- Row 6 -->
+      <div class="row">
+          <div id="twentyone" class="hvr-round-corners cols col-left col-bottom col-xs-2 col-sm-2 col-md-2 col-lg-2 col-md-offset-2 col-lg-offset-2 col-sm-offset-2 col-xs-offset-2">
+            <button style="height:100%;width:100%;" data-toggle="modal" data-target="#myModal">21</button>
+          </div>
+
+          <div id="twentytwo" class="hvr-underline-from-center cols col-bottom col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <button style="height:100%;width:100%;" data-toggle="modal" data-target="#myModal">22</button>
+          </div>
+
+          <div id="twentythree" class="hvr-underline-reveal cols col-bottom col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <button style="height:100%;width:100%;" data-toggle="modal" data-target="#thirteenthModal">23</button>
+          </div>
+
+          <div id="twentyfour" class="cols col-bottom col-right col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <button style="height:100%;width:100%;" data-toggle="modal" data-target="#twentyFourthModal">24</button>
+          </div>
+      </div>
+
+    <br>
+    <br>
+    <br>
+    </div>	
+  </div>
+
+  <!-- Modal 1 START -->
+    <div class="modal fade" id="firstModal" role="dialog">
+      <div class="modal-dialog">
+      
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Gratulerer! Dette er den første luken i kalenderen din<3 </h4>
+          </div>
+          <div class="modal-body">
+            <form name="contactform" method="post" action="send_form_email.php" data-toggle="validator" role="form">
+                <div class="form-group">
+                  <label for="email" class="control-label">Skriv inn din epost for videre instruksjoner</label>
+                  <input type="email" class="form-control" id="inputEmail" name="email" data-error="Bruh, that email address is invalid" required>
+                  <div class="help-block with-errors"></div>
+                </div>
+                
+                <div class="form-group">
+                  <button type="submit" value="Submit" class="btn btn-primary">Start kalenderen</button>
+                </div>
+              </form>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  <!-- Modal 1 END -->
+
+  <!-- Modal 2 START -->
+    <div id="secondModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+      <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Litt hjernetrim har aldri drept noen!</h4>
+          </div>
+          <div class="modal-body">
+
+            <label for="quiz2" class="control-label">Sara er nå 14 år eldre enn Magnus.... Hvis Sara om 10 år er dobbelt så gammel som  Magnus, hvor gammel er Sara om 5 år?</label>
+            <br>
+            <input id="secondTest" type="text" class="form-control" required>
+          </div>
+          <button id="secondBtn" class="btn btn-primary">Prøv lykken</button>
+          <br>
+        </div>
+
+      </div>
+    </div>
+  <!-- Modal 2 END -->
+
+  <!-- Modal 3 START -->
+    <div id="thirdModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+      <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Hei, nydelige <3 Denne får vi håpe du klarer fort...!</h4>
+          </div>
+          <div class="modal-body">
+
+            <label for="quiz3" class="control-label">Hva har ett menneske 206 av i voksen alder?</label>
+            <br>
+            <input id="thirdTest" type="text" class="form-control" required>
+          </div>
+          <button id="thirdBtn" class="btn btn-primary">That's easy!</button>
+          <br>
+        </div>
+
+      </div>
+    </div>
+  <!-- Modal 3 END -->
+
+  <!-- Modal 4 START -->
+    <div id="fourthModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+      <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Fi******** </h4>
+          </div>
+          <div class="modal-body">
+
+            <label for="quiz3" class="control-label">0, 1, 1, 2, 3, 5, 8, 13, 21, ?</label>
+            <br>
+            <input id="fourthTest" type="text" class="form-control" required>
+          </div>
+          <button id="fourthBtn" class="btn btn-primary">37?</button>
+          <br>
+        </div>
+
+      </div>
+    </div>
+  <!-- Modal 4 END -->
+
+  <!-- Modal 5 START -->
+  <div class="modal fade" id="fifthModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Memorisere disse flotte dyrene..... Tik.. Tak... Tik.. Tak..</h4>
+        </div>
+        <div class="modal-body">
+          <img align="center" src="assets/img/memory.png" height="600px">
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <!-- Modal 5 END -->
+  
+  <!-- Modal 5.2 START -->
+  <div class="modal fade" id="fifthModalTwo" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Hvilket av disse dyrene var ikke på bildet?</h4>
+        </div>
+        <div class="modal-body" ng-controller="FiveCtrl">
+          <ul>
+            <li ng-repeat="animal in animals">
+              {{animal.type}}
+            
+            </li>
+          </ul>
+          <input type="text" id="fifthTaskTwo">
+          <button id="fifthBtnTwo" class="btn btn-primary">Play that funky music all night</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <!-- Modal 5.2 END -->
+
+  <!-- Modal 5.3 START -->
+  <div class="modal fade" id="fifthModalThree" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Great job! AwesomeGirl!</h4>
+        </div>
+          <img height="600" width="590" src="assets/img/buffalo-soldier.jpg">
+        </div>
+      </div>
+      
+    </div>
+  <!-- Modal 5.3 END -->
+
+  <!-- Modal 7 START -->
+  <div class="modal fade" id="seventhModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <img height="400" width="600" src="assets/img/korea-1.png">
+        <input type="text" id="seventhTask">
+        <button id="seventhBtn" class="btn btn-primary">Lykke til!</button>
+      </div>
+    </div>
+  </div>
+  <!-- Modal 7 END -->
+
+  <!-- Modal 8 START -->
+  <div class="modal fade" id="eightModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h3 class="modal-title">Det er noe med Mari!</h3>
+        </div>
+        <ul>
+          
+          <li><h4>Mari's mor har fire barn.</h4></li>
+          <li><h4>Det første barnet heter April</h4></li>
+          <li><h4>Det andre barnet heter Mai</h4></li>
+          <li><h4>Det tredje barnet heter Juni</h4></li>
+          <li><h4>Hva heter det fjerde barnet?</h4></li>
+        </ul>
+        <input type="text" id="eightTask">
+        <button id="eightBtn" class="btn btn-primary">Sarah?</button>
+      </div>
+    </div>
+  </div>
+  <!-- Modal 8 END -->
+
+  <!-- Modal 9 START -->
+  <div class="modal fade" id="ninthModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h3 class="modal-title">Run, Rexy, run!</h3>
+        </div>
+        <div style="paddin: 10px; margin:10px;">
+          <p>
+            Sarita og Magnusita (no shit, de heter faktisk det!!) har bestem seg for å dra på date @Tilt. Tilt ligger midt mellom deres respektive hjem. Ettersom Sarita er i dårlig form, og Magnusita har fått seg ny sykkel; så har de bestemt seg for å sykle dit - begge to. Sarita og Magnusita sykler 6 kilometer i timen og bor akkurat 18 kilometer fra Tilt. Sarah har en dinosaurus rex (selvfølgelig!) og den starter å løpe samtidig som S&amp;M begynner å sykle. Rex løper 18 kilometer i timen, frem og tilbake mellom M&amp;S, frem til de møtes på Tilt.
+            <br>
+            <br>
+            Hvor mange kilometer løper Rex?
+          </p>
+        </div>
+        <input type="text" id="ninthTask">
+        <button id="ninthBtn" class="btn btn-primary">91246935?</button>
+      </div>
+    </div>
+  </div>
+  <!-- Modal 9 END -->
+
+  <!-- Modal 10 START -->
+  <div class="modal fade" id="tenthModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h3 class="modal-title">Hva er det pilen peker på?</h3>
+        </div>
+        <img src="assets/img/anatomy-shoulder.jpg">
+        <input type="text" id="tenthTask">
+        <button id="tenthBtn" class="btn btn-primary">Sculpa?</button>
+      </div>
+    </div>
+  </div>
+  <!-- Modal 10 END -->
+
+  <!-- Modal 11 START -->
+  <div class="modal fade" id="eleventhModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h3 class="modal-title">Solve for ?</h3>
+        </div>
+        <img src="assets/img/task10.png" style="width:100%;">
+        <br>
+        <div>
+          <div id="elevenOne" onclick="addIdOne();" class="box">
+            <img src="assets/img/ans10-1.png" style="width:99%;">
+          </div>
+          <div id="elevenTwo" onclick="addIdTwo();" class="box">
+            <img src="assets/img/ans-10-2.png" style="width:99%;">
+          </div>
+          <div id="elevenThree" onclick="addIdThree();" class="box">
+            <img src="assets/img/ans-10-3.png" style="width:99%;">
+          </div>
+          <div id="elevenFour" onclick="addIdFour();" class="box">
+            <img src="assets/img/ans-10-4.png" style="width:99%;">
+          </div>
+          <div id="elevenFive" onclick="addIdFive();" class="box">
+            <img src="assets/img/ans-10-5.png" style="width:99%;">
+          </div>
+        </div>
+        <button id="eleventhBtn" class="btn btn-primary">Sjekk svar</button>
+      </div>
+    </div>
+  </div>
+  <!-- Modal 11 END -->
+
+  <!-- Modal 12 START -->
+  <div class="modal fade" id="twelvthModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h3 class="modal-title">Word Scramble -> Hint: Ocean</h3>
+        </div>
+        <div style="margin-left:10px;">
+          ALES <input type="text" class="input-square input-border" style="margin-left:30px;"><input type="text" class="input-square"><input type="text" class="input-square input-border"><input type="text" class="input-square"> <br>
+          EDTI <input type="text" class="input-square input-border" style="margin-left:34px;"><input type="text" class="input-square input-border"><input type="text" class="input-square"><input type="text" class="input-square"> <br>
+          TWRAE <input type="text" class="input-square" style="margin-left:16px;"><input type="text" class="input-square"><input type="text" class="input-square"><input type="text" class="input-square"><input type="text" class="input-square input-border"> <br>
+          AWEHL <input type="text" class="input-square" style="margin-left:16px;"><input type="text" class="input-square"><input type="text" class="input-square input-border"><input type="text" class="input-square"><input type="text" class="input-square"><br>
+          Answer:<input type="text" id="twelvthTask" style="margin-left:17px;">
+          <button id="twelvthBtn" class="btn btn-sm btn-primary">Sure?</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal 12 END -->
+
+  <!-- Modal 13 START -->
+  <div class="modal fade" id="thirteenModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h3 class="modal-title">Løs sudokuen. Svaret finner du som tallrekken i den markerte raden</h3>
+        </div>
+        <div align="center" class="container">
+          <table align="left">
+            <tr>
+              <td> 9</td>
+              <td> <input type="text" class="sudoku-input" size="2">  </td>
+              <td> <input type="text" class="sudoku-input" size="2">  </td>
+              <td> 8 </td>
+              <td> <input type="text" class="sudoku-input" size="2">  </td>
+              <td> 7 </td>
+              <td> <input type="text" class="sudoku-input" size="2">  </td>
+              <td> <input type="text" class="sudoku-input" size="2">  </td>
+              <td> 2 </td>
+            </tr>
+            <tr>
+              <td> 2 </td>
+              <td> 5 </td>
+              <td> <input type="text" class="sudoku-input" size="2">  </td>
+              <td> 4 </td>
+              <td> <input type="text" class="sudoku-input" size="2">  </td>
+              <td> <input type="text" class="sudoku-input" size="2">  </td>
+              <td> <input type="text" class="sudoku-input" size="2">  </td>
+              <td> <input type="text" class="sudoku-input" size="2">  </td>
+              <td> <input type="text" class="sudoku-input" size="2">  </td>
+            </tr>
+            <tr>
+              <td> <input type="text" class="sudoku-input" size="2">  </td>
+              <td> 8 </td>
+              <td> <input type="text" class="sudoku-input" size="2">  </td>
+              <td> <input type="text" class="sudoku-input" size="2">  </td>
+              <td> 1 </td>
+              <td> <input type="text" class="sudoku-input" size="2">  </td>
+              <td> <input type="text" class="sudoku-input" size="2">  </td>
+              <td> 5 </td>
+              <td> 9 </td>
+            </tr>
+            <tr>
+              <td> <input type="text" class="sudoku-input" size="2">  </td>
+              <td> <input type="text" class="sudoku-input" size="2">  </td>
+              <td> <input type="text" class="sudoku-input" size="2">  </td>
+              <td> 9 </td>
+              <td> <input type="text" class="sudoku-input" size="2">  </td>
+              <td> <input type="text" class="sudoku-input" size="2">  </td>
+              <td> 5 </td>
+              <td> <input type="text" class="sudoku-input" size="2">  </td>
+              <td> 1 </td>
+            </tr>
+            <tr>
+              <td> <input type="text" class="sudoku-input" size="2">  </td>
+              <td> 4 </td>
+              <td> 5 </td>
+              <td> <input type="text" class="sudoku-input" size="2">  </td>
+              <td> <input type="text" class="sudoku-input" size="2">  </td>
+              <td> 2 </td>
+              <td> <input type="text" class="sudoku-input" size="2">  </td>
+              <td> <input type="text" class="sudoku-input" size="2">  </td>
+              <td> 6 </td>
+            </tr>
+            <tr>
+              <td> <input type="text" class="sudoku-input" size="2">  </td>
+              <td> 9 </td>
+              <td> <input type="text" class="sudoku-input" size="2">  </td>
+              <td> 5 </td>
+              <td> 3 </td>
+              <td> <input type="text" class="sudoku-input" size="2">  </td>
+              <td> 8 </td>
+              <td> <input type="text" class="sudoku-input" size="2">  </td>
+              <td> <input type="text" class="sudoku-input" size="2">  </td>
+            </tr>
+            <tr>
+              <td> 8 </td>
+              <td> 7 </td>
+              <td> <input type="text" class="sudoku-input" size="2">  </td>
+              <td> <input type="text" class="sudoku-input" size="2">  </td>
+              <td> 9 </td>
+              <td> 4 </td>
+              <td> 1 </td>
+              <td> <input type="text" class="sudoku-input" size="2">  </td>
+              <td> 5 </td>
+            </tr>
+            <tr style="border:2px solid blue;">
+              <td> <input type="text" class="sudoku-input" size="2">  </td>
+              <td> <input type="text" class="sudoku-input" size="2">  </td>
+              <td> <input type="text" class="sudoku-input" size="2">  </td>
+              <td> 1 </td>
+              <td> 2 </td>
+              <td> <input type="text" class="sudoku-input" size="2">  </td>
+              <td> 4 </td>
+              <td> <input type="text" class="sudoku-input" size="2">  </td>
+              <td> 7 </td>
+            </tr>
+            <tr>
+              <td> 5 </td>
+              <td> 1 </td>
+              <td> <input type="text" class="sudoku-input" size="2">  </td>
+              <td> 6 </td>
+              <td> <input type="text" class="sudoku-input" size="2">  </td>
+              <td> 8 </td>
+              <td> <input type="text" class="sudoku-input" size="2">  </td>
+              <td> <input type="text" class="sudoku-input" size="2">  </td>
+              <td> <input type="text" class="sudoku-input" size="2">  </td>
+            </tr>
+          </table>
+        </div>
+
+
+        <input type="text" id="thirteenthTask">
+        <button id="thirteenthBtn" class="btn btn-primary">123456789</button>
+      </div>
+    </div>
+  </div>
+  <!-- Modal 13 END -->
+
+  <!-- Modal 14 START -->
+  <div class="modal fade" id="fourteenthModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h3 class="modal-title">Gratulerer med å ha kommet deg så angt i kalendere. Nå er det bare 10 dager igjen til jul.</h3>
+        </div>
+        <div style="margin-left:10px;">
+
+        </div>
+          <button id="twelvthBtn" class="btn btn-sm btn-primary">Sure?</button>
+      </div>
+    </div>
+  </div>
+  <!-- Modal 14 END -->
+
+  <!-- Modal 24 START -->
+  <div class="modal fade" id="twentyFourthModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h3 class="modal-title">The Final Riddle</h3>
+        </div>
+        <div style="margin-left:20px;">
+          <h3>The situation</h3>
+          <ol>
+            <li>There are five cottages in five different colors</li>
+            <li>In each house lives a person with a different nationality.</li>
+            <li>These five owners drink a certain type of beverage, smoke a certain brand of cigar and keep a certain pet.</li>
+            <li>No owners have the same pet, smoke the same brand of cigar or drink the same beverage.</li>
+          </ol>
+          <p>The question is: Who owns the fish</p>
+
+          <h3>Hints</h3>
+          <ul>
+            <li>the Brit lives in the red house</li>
+            <li>the Swede keeps dogs as pets</li>
+            <li>the Dane drinks tea</li>
+            <li>the green house is on the left of the white house</li>
+            <li>the green house's owner drinks coffee</li>
+            <li>the person who smokes Pall Mall rears birds</li>
+            <li>the owner of the yellow house smokes Dunhill</li>
+            <li>the man living in the center house drinks milk</li>
+            <li>the Norwegian lives in the first house</li>
+            <li>the man who smokes blends lives next to the one who keeps cats</li>
+            <li>the man who keeps horses lives next to the man who smokes Dunhill</li>
+            <li>the owner who smokes BlueMaster drinks beer</li>
+            <li>the German smokes Prince</li>
+            <li>the Norwegian lives next to the blue house</li>
+            <li>the man who smokes blend has a neighbor who drinks water</li>
+          </ul>
+          <br>
+          <input size="50" type="text" placeholder="Sooo, whats the nationality of the fish owner?">
+          <button class="btn btn-primary">Are you sure?</button>
+         </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal 24 END -->
+
+<script src="assets/js/ang.js"></script>
+</body>
+</html>
+
+
+
+
+
+
